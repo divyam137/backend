@@ -12,7 +12,7 @@ const getContact=asynchandler(async(req,res)=>{
 //@route POST /api/contact
 //@access private
 const createContact = asynchandler(async (req, res) => {
-    try {
+   // try {
         const { name, email, contactinfo } = req.body;
         if (!name || !email || !contactinfo) {
             res.status(400);
@@ -25,10 +25,10 @@ const createContact = asynchandler(async (req, res) => {
             user_id: req.user.id,
         });
         res.status(201).json(contact);
-    } catch (error) {
-        console.error("Error creating contact:", error.message); // Log the specific error message
-        res.status(500).json({ message: "Server error", error: error.message }); // Send back the error message for debugging
-    }
+    // } catch (error) {
+    //     console.error("Error creating contact:", error.message); // Log the specific error message
+    //     res.status(500).json({ message: "Server error", error: error.message }); // Send back the error message for debugging
+    // }
 });
 
 // description get contacts
